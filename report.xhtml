@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">FindYourInvasive</ui:define>
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h5>Report Invasive</h5>
+                    <p>This feature allows you to report an invasive's location</p>
+                    <p> </p>
+                    <p>Upload a picture of the invasive below</p>
+                    <p:button value="Upload" icon="fa fa-upload" style="margin-right:20px;">
+                            <f:param name="productId" value="20" />
+                    </p:button>
+                    <h:form>
+                        <p> </p>
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:outputLabel value="Invasive Species:"/>
+                            <p:autoComplete id="invasivespeciesr" dropdown="true" value="#{reportfeature.invasivename}" completeMethod="#{reportfeature.getInvasiveList2}" />
+                        </h:panelGrid>
+                        <p> </p>
+                        <h:panelGrid columns ="8" cellpadding ="5">
+                            <p:outputLabel value ="Address: "/>
+                            <p:inputText id="location1a" value="#{reportfeature.address}" />
+                            <p:outputLabel value ="City: "/>
+                            <p:inputText id="location1c" value="#{reportfeature.city}" />
+                            <p:outputLabel value ="State: "/>
+                            <p:inputText id="location1s" value="#{reportfeature.state}" />
+                            <p:outputLabel value ="Zip Code:  "/>
+                            <p:inputText id="location1z" value="#{reportfeature.zipcode}" />
+                        </h:panelGrid>
+                        <p:commandButton value="Submit" action="#{reportfeature.reportsaver()}"/>  
+                    </h:form>
+                    
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">FindYourInvasive</ui:define>
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h5>Invasive Tracker</h5>
+                    <p>This feature allows for users to predict the threat of an invasive in any location around the world.</p>
+                    <h:form>
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:outputLabel value="Invasive Species:"/>
+                            <p:autoComplete id="invasivespeciesdd" dropdown="true" value="#{trackerform.invasivename}" completeMethod="#{trackerform.getInvasiveList}" />
+                        </h:panelGrid>
+                        
+                        <p:separator />
+                        
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:outputLabel value="Year:"/>
+                            <p:autoComplete id="yeardd" dropdown="true" value="#{trackerform.yearrange}" completeMethod="#{trackerform.getYearList}" />
+                        </h:panelGrid>                                                                                                              
+
+                        <p:separator />
+                        
+                        <h:panelGrid columns ="8" cellpadding ="5">
+                            <p:outputLabel value ="Address: "/>
+                            <p:inputText id="locationa" value="#{trackerform.address}" />
+                            <p:outputLabel value ="City: "/>
+                            <p:inputText id="locationc" value="#{trackerform.city}" />
+                            <p:outputLabel value ="State: "/>
+                            <p:inputText id="locations" value="#{trackerform.state}" />
+                            <p:outputLabel value ="Zip Code:  "/>
+                            <p:inputText id="locationz" value="#{trackerform.zipcode}" />
+                        </h:panelGrid>
+                           
+                        <p:commandButton value="Submit" action="#{trackerform.modelSender()}"/>
+                            <!--<p:Button value="Submit" action="#{trackerform.modelSender()}"/>-->
+
+                 
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

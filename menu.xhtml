@@ -1,0 +1,204 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pm="http://primefaces.org/morpheus">
+
+    <div class="layout-sidebar">
+        <pm:tabMenu id="tabMenu">
+            <pm:tab id="tab1" icon="fa fa-folder-open" title="FEATURES">
+                <h:form id="menu-form">
+                    <pm:menu widgetVar="me">
+                        <p:menuitem id="om_dashboard" value="Tracker" icon="fa fa-compass" outcome="/tracker"></p:menuitem>
+                        <p:menuitem id="om_dashboard2" value="Report" icon="fa fa-bullhorn" outcome="/report"></p:menuitem>
+                    </pm:menu>
+                </h:form>
+            </pm:tab>
+
+            <pm:tab id="tab2" icon="fa fa-calendar-o" title="INBOX">
+                <div class="inbox-tab">
+                    <ul>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar5.png" library="morpheus-layout" width="45"/>
+                            <span class="name">Janet Wilson</span>
+                            <span class="message">Reports attached</span>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar1.png" library="morpheus-layout" width="45"/>
+                            <span class="name">Wayne Powell</span>
+                            <span class="message">About the meeting</span>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar2.png" library="morpheus-layout" width="45"/>
+                            <span class="name">Herminia Barrett</span>
+                            <span class="message">TODO Update</span>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar3.png" library="morpheus-layout" width="45"/>
+                            <span class="name">Tim Johnson</span>
+                            <span class="message">Expense Reports</span>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar4.png" library="morpheus-layout" width="45"/>
+                            <span class="name">Darrell Baker</span>
+                            <span class="message">Rating Reviews</span>
+                        </li>
+                    </ul>
+
+                    <div class="inbox-labels">
+                        <span>Labels</span>
+                        <ul>
+                            <li class="clearfix">
+                                <span class="inbox-label">Work</span>
+                                <span class="inbox-label-badge">4</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="inbox-label">Personel</span>
+                                <span class="inbox-label-badge">2</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="inbox-label">Shared</span>
+                                <span class="inbox-label-badge">3</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="inbox-label">General</span>
+                                <span class="inbox-label-badge">5</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </pm:tab>
+
+            <pm:tab id="tab3" icon="fa fa-language" title="UPDATES">
+                <div class="update-tab">
+                    <p>Apple consuption count distribution to population (in percentage).</p>
+                    <div class="percentage-indicator">
+                        <span>Britain</span>
+                        <span>84%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-bar-indicator-1"></div></div>
+                    <div class="percentage-indicator">
+                        <span>Germany</span>
+                        <span>58%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-bar-indicator-2"></div></div>
+                    <div class="percentage-indicator">
+                        <span>Turkey</span>
+                        <span>44%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-bar-indicator-3"></div></div>
+                    <div class="percentage-indicator">
+                        <span>Slovenia</span>
+                        <span>37%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-bar-indicator-4"></div></div>
+                </div>
+            </pm:tab>
+      
+            <pm:tab id="tab4" icon="fa fa-image" title="PROJECTS">
+                <div class="projects-tab">
+                    <ul>
+                        <li class="clearfix">
+                            <i class="fa fa-github"></i>
+                            <span class="project-title">GitHub Tasks</span>
+                            <span>3 open, 4 closed</span>
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <i class="fa fa-youtube"></i>
+                            <span class="project-title">YouTube Videos</span>
+                            <span>12 new, 2 subscribers</span>
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 20%"></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <i class="fa fa-twitter"></i>
+                            <span class="project-title">Twitter Posts</span>
+                            <span>24 new messages</span>
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 65%"></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <i class="fa fa-facebook"></i>
+                            <span class="project-title">Facebook Messages</span>
+                            <span>8 total, 4 unread</span>
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <i class="fa fa-linkedin"></i>
+                            <span class="project-title">Linkedin Contacts</span>
+                            <span>90 total</span>
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 90%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </pm:tab>
+
+            <pm:tab id="tab5" icon="fa fa-calendar" title="CALENDAR">
+                <div class="calendar-tab">
+                    <ul>
+                        <li class="clearfix">
+                            <div class="calendar-event-date">
+                                <span>21</span>
+                                <span>OCT</span>
+                            </div>
+                            <div class="calendar-event-detail">
+                                <span class="calendar-event-title">Project Meeting</span>
+                                <i class="fa fa-map-marker"></i>
+                                <span class="calendar-event-location">Chicago</span>
+                                <span class="calendar-event-rsvp calendar-event-rsvp-yes">Going</span>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="calendar-event-date">
+                                <span>13</span>
+                                <span>NOV</span>
+                            </div>
+                            <div class="calendar-event-detail">
+                                <span class="calendar-event-title">Presentation 1</span>
+                                <i class="fa fa-map-marker"></i>
+                                <span class="calendar-event-location">New York</span>
+                                <span class="calendar-event-rsvp calendar-event-rsvp-yes">Going</span>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="calendar-event-date">
+                                <span>01</span>
+                                <span>DEC</span>
+                            </div>
+                            <div class="calendar-event-detail">
+                                <span class="calendar-event-title">Presentation 2</span>
+                                <i class="fa fa-map-marker"></i>
+                                <span class="calendar-event-location">New York</span>
+                                <span class="calendar-event-rsvp calendar-event-rsvp-maybe">Maybe</span>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="calendar-event-date">
+                                <span>25</span>
+                                <span>DEC</span>
+                            </div>
+                            <div class="calendar-event-detail">
+                                <span class="calendar-event-title">New Year Party</span>
+                                <i class="fa fa-map-marker"></i>
+                                <span class="calendar-event-location">San Francisco</span>
+                                <span class="calendar-event-rsvp calendar-event-rsvp-maybe">Maybe</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </pm:tab>
+        </pm:tabMenu>        
+    </div>
+
+</ui:composition>    

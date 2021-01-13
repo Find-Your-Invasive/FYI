@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">FindYourInvasive</ui:define>
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h5>Invasive Tracker Results</h5>
+                    <p>Here are the results for your prediction</p>
+                    <h:outputText value="Invasive Speices: " />
+                    <h:outputText value="#{trackerform.invasivename}"/>
+                    <p> </p>
+                    <h:outputText value="Year: " />
+                    <h:outputText value="#{trackerform.yearrange}"/>
+                    <p> </p>
+                    <h:outputText value="Location: " />
+                    <h:outputText value="#{trackerform.address}"/>
+                    <p> </p>
+                    <h:outputText value="Threat Level: " />
+                    <h:outputText value="#{trackerform.result}"/>
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
