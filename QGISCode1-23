@@ -1,0 +1,18 @@
+import processing
+
+layers = QgsProject.instance().mapLayersByName('wc2.1_2.5m_prec_BCC-CSM2-MR_ssp126_2081-2100')
+layer = layers[0]
+output = 'C:/Users/aviba/Desktop/QGISOuputs/2081precipMAYWork.xyz'
+    
+# Export raster layer to xyz file
+result = processing.run("gdal:translate", 
+        {'INPUT': layer,
+        'TARGET_CRS':None,
+        'NODATA':None,  # Assign a specified nodata value to output bands.
+        'COPY_SUBDATASETS':False,
+        'OPTIONS':'',
+        'EXTRA':'-b 5',
+        'DATA_TYPE':0,
+        'OUTPUT': output})
+    
+print('Your file was created: {}'.format(result['OUTPUT']))
